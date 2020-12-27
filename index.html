@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上酒吧</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <!-- headers -->
+    <nav class="navbar navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-wine-bottle text-info" aria-hidden="true"></i>
+            線上酒吧
+        </a>
+        <div class="form-inline my-2 my-lg-0 ml-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="輸入訂單編號" aria-label="Search">
+          <a href="search.html"><button type="submit" class="btn btn-primary" style="cursor: pointer;">Search</button></a>
+        </div>
+        <!-- shopping cart number -->
+        <div class="dropdown ml-0">
+            <button class="btn btn-sm btn-cart" data-toggle="dropdown" data-flip="false" style="cursor: pointer;">
+                <i class="fa fa-shopping-cart text-dark fa-2x" aria-hidden="true"></i>
+                <span class="badge rounded-pill bg-danger" id="cart_num"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" data-stopPropagation="true" style="min-width: 300px">
+                <div class="px-4 py-3" id="stop_propa">
+                    <h6>已選擇商品</h6>
+                    <table class="table table-sm">
+                        <tbody id="items_list">
+                        </tbody>
+                    </table>
+                    <a href="checkout.html" class="btn btn-primary btn-block">結帳去</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid jumbotron-bg text-black">
+        <div class="container">
+            <div class="bg-lighter p-3">
+                <h1 class="display-4">線上酒吧</h1>
+                <p class="lead">Streamline your home bar with these shaken and stirred essentials</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group sticky-top" style="top: 100px;">
+                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#pane-1">工具組</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#pane-2">調酒組</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <!-- 工具組 -->
+                    <div class="tab-pane active" id="pane-1">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="./imgs/歡樂調酒組.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name">歡樂調酒組</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price">349</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="./imgs/基本調酒工具組.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name2">基本調酒工具</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price2">749</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set2">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn2">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="./imgs/條專業調酒工具組.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name3">專業調酒工具</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price3">2999</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set3">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn3">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 調酒組 -->
+                    <div class="tab-pane" id="pane-2">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="./imgs/甜的嗨波_商品圖.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name4">甜的嗨波</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price4">1199</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set4">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn4">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/柯夢波丹.jpg" class="card-img-top" alt="..." height="250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name5">柯夢波丹</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price5">1599</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set5">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn5">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/馬丁尼 Martini.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name6">馬丁尼</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price6">1799</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set6">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn6">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/濃縮咖啡馬丁尼.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name7">濃縮咖啡馬丁尼</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price7">1799</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set7">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn7">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/Aperol Spritz.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name8">穿越義大利</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price8">1499</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set8">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn8">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/內格羅尼.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name9">內格羅尼</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price9">2499</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set9">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn9">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/月黑風高.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name10">月黑風高</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price10">1599</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set10">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn10">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/田納西騾子.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name11">田納西騾子</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price11">1199</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set11">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn11">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/英倫紳士_琴通寧.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name12">英倫紳士-琴通寧</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price12">999</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set12">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn12">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/英式風情_琴通寧.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name13">英式風情-琴通寧</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price13">999</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set13">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn13">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 box-shadow">
+                                    <img src="./imgs/趴踢嗨.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="p_name14">趴踢嗨一shot</h5>
+                                        <div class="d-flex justify-content-center align-items-end">
+                                            <div class="h3 mb-0 text-danger">
+                                                <small>價格 $</small>
+                                                <strong id="p_price14">1299</strong>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="input-group mt-3">
+                                            <select class="form-control mr-1" name="" id="input_set14">
+                                                <option value="1">1組</option>
+                                                <option value="2">2組</option>
+                                                <option value="3">3組</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary" style="cursor: pointer;" id="addbtn14">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- footer -->
+    <footer class="bg-light text-muted py-5 mt-3">
+        <div class="container">
+            <ul class="list-inline text-center">
+                <li class="list-inline-item">Copyright 2020 電子商務第二組</li>
+                <li class="list-inline-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/" class="text-info">Instagram</a>
+                </li>
+                <li class="list-inline-item">
+                    <i class="fab fa-facebook-square"></i>
+                    <a href="https://www.facebook.com/" class="text-info">Facebook</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">刪除商品</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <p>是否確認刪除商品</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">否</button>
+                    <button type="button" class="btn btn-outline-danger px-5">是</button>
+                </div>
+            </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="all.js"></script>
+</body>
+</html>
