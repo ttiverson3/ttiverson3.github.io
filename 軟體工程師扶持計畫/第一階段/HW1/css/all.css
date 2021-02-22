@@ -1,0 +1,113 @@
+* {
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+header a {
+  text-decoration: none;
+  color: #000;
+}
+
+header .logo {
+  margin-left: 5px;
+}
+
+header .menu {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+header .menu li {
+  list-style: none;
+}
+
+header .menu li a {
+  padding: 8px;
+  transition-duration: 0.5s;
+}
+
+header .menu li a:hover {
+  background-color: #91fcea;
+}
+
+header .icon {
+  display: none;
+}
+
+.welcome {
+  height: 300px;
+  font-size: 2rem;
+  line-height: 300px;
+  text-align: center;
+  background-color: #91fcea;
+}
+
+main {
+  width: 1200px;
+  margin: auto;
+}
+
+main .pic {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+main .pic li {
+  list-style: none;
+  width: 20%;
+  margin: 10px;
+  border: 1px solid #ccc8c8;
+}
+
+main .pic li img {
+  width: 100%;
+}
+
+main .pic li h2 {
+  text-align: center;
+  background-color: #91fcea;
+  padding: 8px;
+  margin: 0;
+  border-top: 1px solid #ccc8c8;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    width: 90%;
+  }
+  main .pic li {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 90%;
+  }
+  main .pic li {
+    width: 100%;
+  }
+  header .icon {
+    display: block;
+    margin-right: 5px;
+  }
+  header .menu {
+    display: none;
+  }
+}
+/*# sourceMappingURL=all.css.map */
