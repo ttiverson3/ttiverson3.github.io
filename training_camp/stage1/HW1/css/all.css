@@ -63,13 +63,13 @@ main {
 main .pic {
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 main .pic li {
   list-style: none;
-  width: 20%;
+  width: 23%;
   margin: 10px;
   border: 1px solid #ccc8c8;
 }
@@ -91,7 +91,7 @@ main .pic li h2 {
     width: 90%;
   }
   main .pic li {
-    width: 40%;
+    width: 46%;
   }
 }
 
