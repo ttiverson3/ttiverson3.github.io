@@ -56,7 +56,7 @@ header .icon {
 }
 
 main {
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -100,7 +100,7 @@ main .pic li h2 {
     width: 90%;
   }
   main .pic li {
-    width: 100%;
+    width: 90%;
   }
   header .icon {
     display: block;
