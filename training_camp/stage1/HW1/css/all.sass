@@ -27,16 +27,18 @@ header
         margin: 0px
         li
             list-style: none
+            @include mobile
+                display: none
             a
                 padding: 8px
                 transition-duration: 0.5s
                 &:hover
                     background-color: $blue
-    .icon
+    .burger
         display: none
         @include mobile
             display: block
-            margin-right: 5px
+            margin-right: 10px
 
 .welcome
     height: 300px

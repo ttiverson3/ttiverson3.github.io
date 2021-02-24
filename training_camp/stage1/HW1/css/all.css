@@ -35,6 +35,12 @@ header .menu li {
   list-style: none;
 }
 
+@media screen and (max-width: 600px) {
+  header .menu li {
+    display: none;
+  }
+}
+
 header .menu li a {
   padding: 8px;
   transition-duration: 0.5s;
@@ -44,14 +50,14 @@ header .menu li a:hover {
   background-color: #91fcea;
 }
 
-header .icon {
+header .burger {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
-  header .icon {
+  header .burger {
     display: block;
-    margin-right: 5px;
+    margin-right: 10px;
   }
 }
 
