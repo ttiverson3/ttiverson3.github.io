@@ -1,3 +1,4 @@
+@import "media.sass"
 $blue: #91fcea
 
 *
@@ -33,6 +34,9 @@ header
                     background-color: $blue
     .icon
         display: none
+        @include mobile
+            display: block
+            margin-right: 5px
 
 .welcome
     height: 300px
@@ -45,6 +49,10 @@ header
 main
     max-width: 1200px
     margin: auto
+    @include pad
+        width: 90%
+    @include mobile
+        width: 90%
     .pic
         padding: 0
         display: flex
@@ -56,6 +64,10 @@ main
             margin: 10px
             border: 1px solid #ccc8c8
             box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2)
+            @include pad
+                width: 46%
+            @include mobile
+                width: 90%
             img
                 width: 100%
             h2
@@ -64,23 +76,3 @@ main
                 padding: 8px
                 margin: 0
                 border-top: 1px solid #ccc8c8
-
-@media screen and ( max-width: 1200px )
-    main
-        width: 90%
-        .pic
-            li
-                width: 46%
-
-@media screen and ( max-width: 600px )
-    main
-        width: 90%
-        .pic
-            li
-                width: 90%
-    header
-        .icon
-            display: block
-            margin-right: 5px
-        .menu
-            display: none

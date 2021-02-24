@@ -48,6 +48,13 @@ header .icon {
   display: none;
 }
 
+@media screen and (max-width: 600px) {
+  header .icon {
+    display: block;
+    margin-right: 5px;
+  }
+}
+
 .welcome {
   height: 300px;
   font-size: 2rem;
@@ -60,6 +67,18 @@ header .icon {
 main {
   max-width: 1200px;
   margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 90%;
+  }
 }
 
 main .pic {
@@ -77,6 +96,18 @@ main .pic li {
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 1200px) {
+  main .pic li {
+    width: 46%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main .pic li {
+    width: 90%;
+  }
+}
+
 main .pic li img {
   width: 100%;
 }
@@ -87,30 +118,5 @@ main .pic li h2 {
   padding: 8px;
   margin: 0;
   border-top: 1px solid #ccc8c8;
-}
-
-@media screen and (max-width: 1200px) {
-  main {
-    width: 90%;
-  }
-  main .pic li {
-    width: 46%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  main {
-    width: 90%;
-  }
-  main .pic li {
-    width: 90%;
-  }
-  header .icon {
-    display: block;
-    margin-right: 5px;
-  }
-  header .menu {
-    display: none;
-  }
 }
 /*# sourceMappingURL=all.css.map */
