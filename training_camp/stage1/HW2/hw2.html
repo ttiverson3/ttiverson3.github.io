@@ -21,11 +21,7 @@
         // 要求二：Python 字典與列表、JavaScript 物件與陣列
         // 完成以下函式，正確計算出員工的平均薪資，請考慮員工數量會變動的情況。
         function avg(data){
-            let total_salary = 0;
-            for(i = 0; i < data.count; i++){
-                total_salary += data.employees[i]["salary"];
-            }
-            console.log(total_salary / data.count);
+            console.log(data.employees.map(x => x.salary).reduce((a, b) => a + b) / data.count);
         }
         avg({
             "count":3,
