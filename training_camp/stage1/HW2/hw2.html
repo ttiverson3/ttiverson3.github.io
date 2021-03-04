@@ -57,9 +57,7 @@
                         }
                     }
                     if(min != i){
-                        let temp = nums[i];
-                        nums[i] = nums[min];
-                        nums[min] = temp;
+                        [nums[i], nums[min]] = [nums[min], nums[i]];
                     }
                 }
                 // 比大小

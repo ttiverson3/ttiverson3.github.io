@@ -41,9 +41,7 @@ def maxProduct(nums):
             flag = False # 檢查有無交換位置
             for j in range(len(nums) - 1):
                 if nums[j] > nums[j+1]:
-                    temp = nums[j]
-                    nums[j] = nums[j+1]
-                    nums[j+1] = temp
+                    nums[j], nums[j+1] = nums[j+1], nums[j]
                     flag = True
             if flag == False:
                 return max(nums[0] * nums[1], nums[-1] * nums[-2]) # 因為可能有負數，故將最大的兩個、最小的兩個數字相乘，再取最大值
