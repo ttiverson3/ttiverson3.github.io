@@ -74,7 +74,7 @@
         // specific target. You can assume that each input would have exactly one solution, and you
         // can not use the same element twice.
         function twoSum(nums, target){
-        for(let i = 0; i < nums.length; i++){
+        for(let i = 0; i < nums.length - 1; i++){
             if(nums.filter(element => nums.indexOf(element) != i).includes(target - nums[i])){
                 return [nums.indexOf(nums[i]), nums.indexOf(target - nums[i])];
                 }
