@@ -56,12 +56,10 @@ print(maxProduct([10, -20, 0, 3])) # 得到 30 因為 10 和 3 相乘得到最�
 # specific target. You can assume that each input would have exactly one solution, and you
 # can not use the same element twice.
 def twoSum(nums, target):
-    nums_copy = nums.copy()
-    for i in range(len(nums) - 1, 0, -1):
-        num = nums[i]
-        nums_copy.pop()
-        if(target - num in nums_copy):
-            return [nums.index(target - num), nums.index(num)]
+    for i in range(len(nums)):
+        if target - nums[i] in [number for number in nums if nums.index(number) != i]:
+            return [nums.index(nums[i]), nums.index(target - nums[i])]
+    return "not found"
 result=twoSum([2, 11, 7, 15], 9)
 print(result) # show [0, 2] because nums[0]+nums[2] is 9
 

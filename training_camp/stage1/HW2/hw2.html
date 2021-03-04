@@ -74,15 +74,12 @@
         // specific target. You can assume that each input would have exactly one solution, and you
         // can not use the same element twice.
         function twoSum(nums, target){
-            let nums_copy = nums.slice();
-            for(let i = nums.length - 1; i > 0; i--){
-                num = nums[i];
-                nums_copy.pop();
-                if(nums_copy.findIndex(element => element == target - num) != -1){
-                    return [nums.indexOf(target - num), nums.indexOf(num)];
+        for(let i = 0; i < nums.length; i++){
+            if(nums.filter(element => nums.indexOf(element) != i).includes(target - nums[i])){
+                return [nums.indexOf(nums[i]), nums.indexOf(target - nums[i])];
                 }
             }
-            return "not found";
+        return "not found";
         }
         result = twoSum([2, 11, 7, 15], 9);
         console.log(result);
