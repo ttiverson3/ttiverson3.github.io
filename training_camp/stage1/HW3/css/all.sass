@@ -26,10 +26,10 @@ header
         display: flex
         padding: 0px
         margin: 0px
+        @include mobile
+                display: none
         li
             list-style: none
-            @include mobile
-                display: none
             a
                 padding: 8px
                 transition-duration: 0.5s
@@ -56,7 +56,7 @@ main
         width: 90%
     @include mobile
         width: 90%
-    #card
+    .card
         padding: 0
         display: flex
         justify-content: space-around
@@ -103,3 +103,20 @@ div
             background-color: #fff
             border: 1px solid #617dd6
             color: #617dd6
+
+.mobile-menu
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100vh
+    background: black
+    color: #fff
+    transform: translateY(-100%)
+    transition: transform 0.2s
+    list-style: none
+
+.showMenu
+    transform: translateY(0)
