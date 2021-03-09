@@ -18,7 +18,7 @@ btn.addEventListener("click", function() {
         let data = JSON.parse(request.responseText).result.results;
         // console.log(data);
         start = renderHTML(data, start);
-        console.log(start);
+        // console.log(start);
         if(start > data.length){
             let finish = document.createElement("div");
             finish.textContent = "No more data ...";
