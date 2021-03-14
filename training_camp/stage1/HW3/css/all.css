@@ -130,6 +130,9 @@ main .card li h2 {
   padding: 8px;
   margin: 0;
   border-top: 1px solid #ccc8c8;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 div {
