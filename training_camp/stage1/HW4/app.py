@@ -29,23 +29,28 @@ def signIn():
             return redirect("/member")
         else:
             return redirect("/error")
-    # 檢查使用者狀態
-    if "account" not in session:
-        return redirect(url_for("index"))
+    return redirect(url_for("index"))
 
 # 會員頁
 @app.route("/member")
 def member():
+    # 檢查使用者狀態
+    if "account" not in session:
+        return redirect(url_for("index"))
     return render_template("member.html")
 
 # 登入失敗
 @app.route("/error")
 def error():
+    if "account" not in session:
+        return redirect(url_for("index"))
     return render_template("error.html")
 
 # 登出
 @app.route("/signout")
 def signOut():
+    if "account" not in session:
+        return redirect(url_for("index"))
     session.pop("account")
     return redirect(url_for("index"))
 
