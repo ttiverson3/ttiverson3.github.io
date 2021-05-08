@@ -1,0 +1,247 @@
+$blue: #548EA6
+$orange: #F3D2B3
+
+@mixin center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+
+*
+    font-family: "Microsoft JhengHei"
+    // border: 1px solid #eee
+    position: relative
+    box-sizing: border-box
+
+html, body
+    margin: 0px
+    padding: 0px
+    position: relative
+    border-color: $blue
+
+body
+    background-color: $blue
+    display: flex
+    justify-content: center
+
+h2
+    font-size: 28px
+    margin: 0px
+    padding-left: 5px
+    color: $blue
+
+.resume
+    background-color: #fff
+    margin: 10px
+    height: 900px
+    width: 700px
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.6)
+
+.top
+    display: flex
+    height: 400px
+    .left
+        .profile
+            width: 250px
+            height: 100%
+            left: 50px
+            background-color: $orange
+            border-right: 30px solid #ebb583
+            .avatar
+                position: absolute
+                border-radius: 100%
+                width: 200px
+                height: 200px
+                top: 25px
+                left: 80px
+                background-image: url("../imgs/me.jpg")
+                background-size: cover
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.6)
+            .name
+                position: absolute
+                font-size: 44px
+                font-weight: 800
+                transform: rotate(-90deg)
+                top: 75px
+                left: -115px
+                color: $blue
+            .info
+                position: absolute
+                top: 265px
+                left: 45px
+                p
+                    display: flex
+                    margin: 12px 0px
+                    img
+                        margin-right: 5px
+    .right
+        padding: 10px
+        .about
+            height: 50%
+            p
+                line-height: 1.5rem
+                padding: 5px 10px
+        .edu
+            height: 50%
+            .bar
+                top: 20px
+                left: 16px
+                .point
+                    top: 16px
+                    left: -1px
+            .desc
+                position: absolute
+                top: 46px
+                left: 42px
+                p
+                    line-height: 1.5rem
+                    span
+                        display: block
+                    .year
+                        color: $blue
+                        font-weight: bold
+                        font-size: 18px
+                        margin-bottom: 14px
+                    .school
+                        font-size: 16px
+                        font-weight: bold
+                        margin-bottom: 10px
+                    .dept
+                        font-size: 14px
+
+
+.middle
+    display: flex
+    height: 250px
+    .left
+        padding: 10px
+        .skill
+            display: flex
+            align-items: center
+            margin-bottom: 10px
+            .html
+                background: linear-gradient(90deg, $orange 60%, #fff 0)
+            .css
+                background: linear-gradient(90deg, $orange 60%, #fff 0)
+            .py
+                background: linear-gradient(90deg, $orange 80.4%, #fff 0)
+    .right
+        padding: 10px
+        .bar
+            top: 20px
+            left: 10px
+            height: 150px
+            .point1
+                top: 16px
+                left: -1px
+            .point2
+                top: 74px
+                left: -1px
+        .desc
+                position: absolute
+                top: 18px
+                left: 42px
+                p
+                    line-height: 1.5rem
+                    color: $blue
+                    font-weight: bold
+                    font-size: 18px
+
+.bottom
+    display: flex
+    height: 200px
+    .left
+        padding: 10px
+        .toeic, .datacamp
+            display: flex
+            align-items: center
+            color: $blue
+        .toeic
+            .loadchart
+                height: 20px
+                width: 180px
+                background: linear-gradient(90deg, $orange 70%, #fff 0)
+        .score
+            font-size: 18px
+            font-weight: bold
+            margin-left: 8px
+        .datacamp
+            .loadchart
+                height: 20px
+                width: 140px
+                background: linear-gradient(90deg, $orange 30%, #fff 0)
+
+
+    .right
+        padding: 10px
+        .content
+            padding: 10px
+            display: flex
+            justify-content: space-around
+            img
+                display: block
+                margin: auto
+            .word
+                margin: 10px
+                color: $blue
+                font-weight: bold
+
+.footer
+    height: 50px
+    background-color: $orange
+    display: flex
+    justify-content: center
+    align-items: center
+    background-image: url("../imgs/me.jpg")
+    img
+        display: inline-block
+        margin: 5px
+        border: 0px solid #000
+
+
+.loadchart
+    display: flex
+    border: 1px solid $blue
+    border-radius: 6px
+    margin-left: 10px
+    width: 250px
+    height: 30px
+
+.load
+    width: 50px
+    height: 28px
+    border-right: 1px dashed $blue
+    border-top-left-radius: 6px
+    border-top-bottom-radius: 
+    border-top-color: transparent
+    border-left-color: transparent
+    border-bottom-color: transparent
+
+
+.bar
+    border-radius: 4px
+    width: 8px
+    height: 120px
+    background-color: $orange
+.point
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    background-color: $blue
+
+.left, .right
+    display: inline-block
+    width: 50%
+    height: 100%
+
+.content
+    margin-top: 10px
+    padding: 5px
+
+a
+    display: block
+    font-size: 20px
+    text-decoration: none
+    color: #000
+    font-weight: 500
