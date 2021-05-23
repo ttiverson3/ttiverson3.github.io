@@ -209,7 +209,7 @@ h2 {
   padding: 10px;
 }
 
-.bottom .left .toeic, .bottom .left .datacamp {
+.bottom .left .toeic, .bottom .left .passion {
   display: flex;
   align-items: center;
   color: #548EA6;
@@ -227,10 +227,10 @@ h2 {
   margin-left: 8px;
 }
 
-.bottom .left .datacamp .loadchart {
+.bottom .left .passion .loadchart {
   height: 20px;
-  width: 140px;
-  background: linear-gradient(90deg, #F3D2B3 30%, #fff 0);
+  width: 167px;
+  background: linear-gradient(90deg, #F3D2B3 100%, #fff 0);
 }
 
 .bottom .right {
